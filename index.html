@@ -1,1636 +1,784 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Milena ❤️ — De Joel</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e11d48'%3E%3Cpath d='M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8-2.5 4.5-9.5 9-9.5 9z'/%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        :root {
-            --rose-950: #4c0519;
-            --wine: #722F37;
-            --velvet: #6B2737;
-            --rose-primary: #e11d48;
-            --rose-light: #fda4af;
-        }
-
-        html, body {
-            font-family: 'Inter', sans-serif;
-            background: radial-gradient(ellipse at top, #2d0a1a 0%, #1a0610 50%, #0d0308 100%);
-            background-attachment: fixed;
-            color: #fff;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(76, 5, 25, 0.3);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #e11d48, #722F37);
-            border-radius: 10px;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .glass-strong {
-            background: rgba(20, 5, 15, 0.6);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .gradient-romantic {
-            background: linear-gradient(135deg, #e11d48 0%, #722F37 50%, #4c0519 100%);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #fda4af 0%, #fb7185 50%, #e11d48 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-romantic {
-            background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%);
-            box-shadow: 0 10px 30px -10px rgba(225, 29, 72, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            border: none;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-romantic:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px -10px rgba(225, 29, 72, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-romantic:active {
-            transform: translateY(0);
-        }
-
-        @keyframes heartFloat {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-                transform: translateY(90vh) translateX(10px) scale(1);
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(-20px) scale(0.8);
-                opacity: 0;
-            }
-        }
-
-        .heart-float {
-            animation: heartFloat linear infinite;
-            position: absolute;
-            pointer-events: none;
-            font-size: 20px;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        @keyframes romanticPulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 20px rgba(225, 29, 72, 0);
-            }
-        }
-
-        .romantic-pulse {
-            animation: romanticPulse 2s infinite;
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-4px) scale(1.02);
-        }
-
-        .handwritten {
-            font-family: 'Dancing Script', cursive;
-        }
-
-        .input-romantic {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            color: white;
-            padding: 12px 16px;
-            border-radius: 12px;
-            width: 100%;
-            font-size: 16px;
-        }
-
-        .input-romantic:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(225, 29, 72, 0.5);
-            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
-            outline: none;
-        }
-
-        .input-romantic::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        /* Welcome Screen */
-        #welcome-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, #2d0a1a 0%, #1a0610 50%, #0d0308 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            padding: 20px;
-            text-align: center;
-        }
-
-        #welcome-screen h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        #welcome-screen p {
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            margin-bottom: 16px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
-        }
-
-        #welcome-screen .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            margin: 30px 0;
-            opacity: 0.8;
-            animation: fadeInUp 1s ease-out 0.4s backwards;
-        }
-
-        #welcome-screen button {
-            animation: fadeInUp 1s ease-out 0.6s backwards;
-        }
-
-        /* Main App */
-        #app {
-            display: none;
-            min-height: 100vh;
-            padding-bottom: 80px;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(20, 5, 15, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 0;
-            z-index: 1000;
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            padding: 8px 16px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 12px;
-            opacity: 0.6;
-        }
-
-        .nav-item:hover {
-            opacity: 0.8;
-        }
-
-        .nav-item.active {
-            opacity: 1;
-            background: rgba(225, 29, 72, 0.2);
-        }
-
-        .nav-item span {
-            font-size: 20px;
-        }
-
-        /* Music Player */
-        .music-player {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            border-radius: 50px;
-        }
-
-        .music-btn {
-            background: rgba(225, 29, 72, 0.3);
-            border: 1px solid rgba(225, 29, 72, 0.5);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .music-btn:hover {
-            background: rgba(225, 29, 72, 0.5);
-            transform: scale(1.1);
-        }
-
-        .music-btn.playing {
-            animation: romanticPulse 2s infinite;
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .volume-slider {
-            width: 80px;
-            height: 4px;
-            border-radius: 2px;
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #e11d48;
-            cursor: pointer;
-        }
-
-        /* Sections */
-        .section {
-            display: none;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 6vw, 3rem);
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            opacity: 0.8;
-            margin-bottom: 40px;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-        }
-
-        /* Home Section */
-        .home-hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .home-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            margin-bottom: 20px;
-        }
-
-        .home-hero p {
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            opacity: 0.9;
-            margin-bottom: 40px;
-        }
-
-        .home-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 60px;
-        }
-
-        .home-card {
-            padding: 32px;
-            border-radius: 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .home-card-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .home-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
-
-        .home-card p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        /* Mood Section */
-        .mood-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        .mood-card {
-            padding: 24px 16px;
-            border-radius: 16px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .mood-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .mood-emoji {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
-
-        .mood-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .mood-response {
-            display: none;
-            padding: 32px;
-            border-radius: 20px;
-            margin-top: 32px;
-        }
-
-        .mood-response.active {
-            display: block;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .mood-phrase {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .mood-activity {
-            padding: 20px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 24px;
-        }
-
-        .mood-activity h4 {
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        /* Games Section */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .game-card {
-            padding: 32px;
-            border-radius: 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .game-icon {
-            font-size: 56px;
-            margin-bottom: 16px;
-        }
-
-        .game-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
-
-        .game-card p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        /* Game Modals */
-        .game-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .game-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeInUp 0.4s ease-out;
-        }
-
-        .game-content {
-            max-width: 600px;
-            width: 100%;
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
-        }
-
-        .game-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .quiz-question {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 32px;
-            line-height: 1.5;
-        }
-
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .quiz-option {
-            padding: 16px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .quiz-option:hover {
-            background: rgba(225, 29, 72, 0.2);
-            border-color: rgba(225, 29, 72, 0.5);
-        }
-
-        .quiz-option.selected {
-            background: rgba(225, 29, 72, 0.3);
-            border-color: #e11d48;
-        }
-
-        .quiz-explanation {
-            padding: 20px;
-            border-radius: 12px;
-            background: rgba(225, 29, 72, 0.1);
-            margin-top: 20px;
-            font-style: italic;
-        }
-
-        /* Truth or Dare */
-        .tod-display {
-            padding: 32px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            margin: 24px 0;
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        /* Cards Game */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 16px;
-            margin: 24px 0;
-        }
-
-        .game-card-item {
-            aspect-ratio: 2/3;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .game-card-item:hover {
-            transform: scale(1.05);
-        }
-
-        .game-card-item.flipped {
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotateY(180deg);
-        }
-
-        .card-message {
-            padding: 24px;
-            border-radius: 16px;
-            background: rgba(225, 29, 72, 0.1);
-            margin-top: 20px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* Catch Hearts Game */
-        .catch-area {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.03);
-            overflow: hidden;
-            margin: 20px 0;
-        }
-
-        .catch-heart {
-            position: absolute;
-            font-size: 32px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .catch-heart:hover {
-            transform: scale(1.3);
-        }
-
-        .catch-score {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        /* Memory Game */
-        .memory-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 24px 0;
-        }
-
-        .memory-card {
-            aspect-ratio: 1;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .memory-card.flipped {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .memory-card.matched {
-            background: rgba(34, 197, 94, 0.3);
-            cursor: default;
-        }
-
-        /* Letters Section */
-        .letters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .letter-card {
-            padding: 32px;
-            border-radius: 20px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .letter-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .letter-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .letter-card p {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* Letter Modal */
-        .letter-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .letter-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeInUp 0.4s ease-out;
-        }
-
-        .letter-content {
-            max-width: 600px;
-            width: 100%;
-            padding: 48px;
-            border-radius: 24px;
-            position: relative;
-        }
-
-        .letter-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .letter-subtitle {
-            text-align: center;
-            opacity: 0.7;
-            margin-bottom: 32px;
-            font-style: italic;
-        }
-
-        .letter-body {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 32px;
-            white-space: pre-line;
-        }
-
-        .letter-signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.3rem;
-            text-align: right;
-            opacity: 0.9;
-        }
-
-        /* Notes Section */
-        .notes-form {
-            padding: 32px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-        }
-
-        .notes-form textarea {
-            min-height: 150px;
-            resize: vertical;
-            margin-bottom: 16px;
-        }
-
-        .notes-list {
-            display: grid;
-            gap: 16px;
-        }
-
-        .note-item {
-            padding: 24px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .note-date {
-            font-size: 0.85rem;
-            opacity: 0.6;
-            margin-bottom: 12px;
-        }
-
-        .note-text {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Photos Section */
-        .photos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .photo-card {
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .photo-placeholder {
-            aspect-ratio: 4/3;
-            background: linear-gradient(135deg, rgba(225, 29, 72, 0.2) 0%, rgba(114, 47, 55, 0.2) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 64px;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .photo-caption {
-            padding: 16px;
-            text-align: center;
-            font-style: italic;
-            opacity: 0.8;
-        }
-
-        /* Joel Section */
-        .joel-section {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .joel-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 32px;
-            background: linear-gradient(135deg, rgba(225, 29, 72, 0.3) 0%, rgba(114, 47, 55, 0.3) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            border: 4px solid rgba(225, 29, 72, 0.3);
-        }
-
-        .joel-message {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Floating Hearts */
-        #floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 8px 0;
-            }
-
-            .nav-item {
-                padding: 6px 12px;
-                font-size: 10px;
-            }
-
-            .nav-item span {
-                font-size: 18px;
-            }
-
-            .music-player {
-                top: 10px;
-                right: 10px;
-                padding: 8px 12px;
-            }
-
-            .volume-slider {
-                width: 60px;
-            }
-
-            .memory-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 769px) {
-            .navbar {
-                top: 0;
-                bottom: auto;
-                left: 0;
-                right: 0;
-                border-top: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding: 16px 0;
-            }
-
-            #app {
-                padding-top: 80px;
-                padding-bottom: 20px;
-            }
-
-            .nav-item {
-                flex-direction: row;
-                gap: 8px;
-                font-size: 14px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Universo de Milena ❤️ - De Joel</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tipografías Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030008;
+      color: #fecdd3;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* === CAPA 0: FONDO DEL UNIVERSO === */
+    #universe-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* === CAPA 1 & 2: PANELES GLASSMORPHISM === */
+    .glass-panel {
+      background: rgba(15, 6, 23, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(244, 114, 182, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    }
+    
+    .glass-card {
+      background: rgba(28, 10, 40, 0.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 114, 182, 0.18);
+      box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /* Ocultar barra de desplazamiento */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
 </head>
-<body>
-    <!-- Welcome Screen -->
-    <div id="welcome-screen">
-        <h1 class="gradient-text">Hola, Milena ❤️</h1>
-        <p>Esta pequeña parte del mundo fue creada especialmente para ti.</p>
-        <p class="signature">De Joel, el chico que quiere acompañarte, cuidarte y estar a tu lado siempre.</p>
-        <button class="btn-romantic romantic-pulse" onclick="enterApp()">
-            Entrar a nuestro mundo ❤️
-        </button>
+<body class="relative min-h-screen pb-28">
+
+  <!-- ==================== CAPA 0: CANVAS UNIVERSO ULTRA HD ==================== -->
+  <canvas id="universe-canvas"></canvas>
+
+  <!-- ==================== CAPA 50: MODAL BIENVENIDA ==================== -->
+  <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-500">
+    <div class="max-w-md w-full glass-panel rounded-3xl p-8 text-center border border-rose-500/40 shadow-2xl relative">
+      <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-tr from-purple-600 via-rose-500 to-amber-400 flex items-center justify-center shadow-lg shadow-rose-600/40 text-2xl animate-pulse">
+        ✨
+      </div>
+      <h1 class="text-3xl font-serif font-bold text-white mb-2 tracking-wide">
+        Bienvenida, Milena <span class="text-rose-400">❤️</span>
+      </h1>
+      <p class="text-rose-200/90 text-sm mb-6 leading-relaxed">
+        Has entrado a un universo creado exclusivamente para ti.
+      </p>
+      <div class="p-4 rounded-2xl bg-purple-950/40 border border-purple-800/30 mb-8">
+        <p class="text-xs italic text-rose-300/90">
+          “Entre millones de estrellas en esta galaxia, mi lugar favorito siempre será a tu lado.” — Joel
+        </p>
+      </div>
+      <button onclick="closeWelcome()" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-purple-600 to-pink-600 text-white font-medium shadow-lg shadow-rose-600/30 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2">
+        <span>Explorar nuestro Universo ✨</span>
+      </button>
     </div>
+  </div>
 
-    <!-- Main App -->
-    <div id="app">
-        <!-- Floating Hearts -->
-        <div id="floating-hearts"></div>
+  <!-- ==================== CAPA 40: BARRA SUPERIOR Y REPRODUCTOR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-stone-950/80 border-b border-rose-900/30 px-4 sm:px-8 py-3 flex items-center justify-between">
+    <div class="font-serif text-base sm:text-lg font-bold text-rose-300 flex items-center gap-2">
+      <span>El Universo de Milena</span>
+      <span class="text-[9px] sm:text-[10px] bg-purple-950/80 text-rose-300 border border-purple-800/40 px-2 py-0.5 rounded-full font-sans tracking-widest uppercase">🌌 De Joel</span>
+    </div>
+    
+    <!-- Controles de Audio -->
+    <div class="glass-panel px-3 py-1.5 rounded-full flex items-center gap-3 text-xs border border-rose-500/20">
+      <audio id="audio-player" loop preload="auto">
+        <source src="cancion.mp3" type="audio/mpeg">
+      </audio>
+      <button id="music-btn" onclick="toggleMusic()" class="flex items-center gap-2 text-rose-200 hover:text-white transition-colors">
+        <span id="music-icon">🎵</span>
+        <span id="music-text" class="text-[11px] font-medium hidden sm:inline">Reproducir música</span>
+      </button>
+    </div>
+  </header>
 
-        <!-- Music Player -->
-        <div class="music-player glass">
-            <button class="music-btn" id="music-toggle" onclick="toggleMusic()">🎵</button>
-            <div class="volume-control">
-                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="50" oninput="changeVolume(this.value)">
-            </div>
+  <!-- ==================== CAPA 10: CONTENIDO PRINCIPAL ==================== -->
+  <main class="max-w-4xl mx-auto px-4 pt-24 space-y-16 relative z-10">
+
+    <!-- SECCIÓN 1: INICIO & ESTADOS DE ÁNIMO -->
+    <section id="sec-inicio" class="space-y-8">
+      <div class="text-center pt-2">
+        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-purple-950/60 border border-purple-800/40 text-xs text-rose-300 mb-3">
+          <span>✨ Un espacio infinito hecho con amor</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold text-white mb-2">Para Milena <span class="text-rose-500">❤️</span></h1>
+        <p class="text-xs sm:text-sm text-rose-200/80 max-w-lg mx-auto">
+          De Joel, el chico que quiere cuidar cada uno de tus días.
+        </p>
+      </div>
+
+      <!-- Selector de Estados de Ánimo -->
+      <div>
+        <h2 class="text-lg sm:text-xl font-serif text-center font-bold text-rose-100 mb-1">¿Cómo te sientes hoy, Milena?</h2>
+        <p class="text-center text-rose-300/70 text-xs mb-6">Haz clic en tu estado actual para ver un mensaje especial</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <button onclick="selectMood('Feliz', '😊', 'Tu sonrisa merece quedarse mucho tiempo más. Iluminas todo a tu alrededor.', 'Celebración instantánea: Recuerda algo bonito que ocurrió hoy.')" class="p-3.5 rounded-2xl glass-card text-left hover:border-rose-400 active:scale-95 transition-all">
+            <span class="text-2xl">😊</span>
+            <span class="text-xs font-semibold text-rose-100 block mt-2">Feliz</span>
+          </button>
+
+          <button onclick="selectMood('Triste', '😔', 'Está bien no estar bien todos los días. No tienes que cargar con todo sola, estoy aquí.', 'Abrazo distante: Cierra los ojos 10 segundos y respira profundo.')" class="p-3.5 rounded-2xl glass-card text-left hover:border-rose-400 active:scale-95 transition-all">
+            <span class="text-2xl">😔</span>
+            <span class="text-xs font-semibold text-rose-100 block mt-2">Triste</span>
+          </button>
+
+          <button onclick="selectMood('Enamorada', '🥰', 'El amor es encontrar en alguien ese refugio donde todo cobra sentido.', 'Lee la carta especial que Joel preparó para ti.')" class="p-3.5 rounded-2xl glass-card text-left hover:border-rose-400 active:scale-95 transition-all">
+            <span class="text-2xl">🥰</span>
+            <span class="text-xs font-semibold text-rose-100 block mt-2">Enamorada</span>
+          </button>
+
+          <button onclick="selectMood('Cansada', '😴', 'Descansa, Milena. No tienes que ser fuerte todo el tiempo. El mundo puede esperar.', 'Pausa reparadora: Pon música suave y descansa la vista.')" class="p-3.5 rounded-2xl glass-card text-left hover:border-rose-400 active:scale-95 transition-all">
+            <span class="text-2xl">😴</span>
+            <span class="text-xs font-semibold text-rose-100 block mt-2">Cansada</span>
+          </button>
+
+          <button onclick="selectMood('Cariño', '🥺', 'Si pudiera darte un abrazo en este instante, no te soltaría en un largo rato.', 'Recuerda que Joel te quiere muchísimo.')" class="p-3.5 rounded-2xl glass-card text-left hover:border-rose-400 active:scale-95 transition-all col-span-2 sm:col-span-1">
+            <span class="text-2xl">🥺</span>
+            <span class="text-xs font-semibold text-rose-100 block mt-2">Necesito Cariño</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: POEMAS DIARIOS (LUNES A DOMINGO) -->
+    <section id="sec-diarios" class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-2xl font-serif font-bold text-white">Poemas de la Semana 🗓️</h2>
+        <p class="text-xs text-rose-300/70">Un verso para cada día que compartimos bajo el mismo cielo</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Lunes -->
+        <div onclick="openPoem('Lunes', 'Inicio de luz', 'Empieza la semana y no me pesa,\nsi sé que en algún punto estás tú.\nEres la calma entre la prisa,\nmi dulce motivo y mi luz.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Lunes</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">Inicio de luz</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">Empieza la semana y no me pesa, si sé que en algún punto estás tú...</p>
         </div>
 
-        <!-- Audio Element -->
-        <audio id="bg-music" loop>
-            <source src="assets/music/romantic.mp3" type="audio/mpeg">
-        </audio>
-
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="nav-item active" onclick="showSection('home')">
-                <span>🏠</span>
-                <span>Inicio</span>
-            </div>
-            <div class="nav-item" onclick="showSection('mood')">
-                <span>😊</span>
-                <span>Mood</span>
-            </div>
-            <div class="nav-item" onclick="showSection('games')">
-                <span>🎮</span>
-                <span>Juegos</span>
-            </div>
-            <div class="nav-item" onclick="showSection('letters')">
-                <span>💌</span>
-                <span>Cartas</span>
-            </div>
-            <div class="nav-item" onclick="showSection('photos')">
-                <span>📸</span>
-                <span>Recuerdos</span>
-            </div>
-        </nav>
-
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="home-hero">
-                <h1 class="gradient-text">Para Milena ❤️</h1>
-                <p>Un espacio creado con amor, solo para ti</p>
-            </div>
-
-            <div class="home-cards">
-                <div class="home-card glass card-hover" onclick="showSection('mood')">
-                    <div class="home-card-icon">😊</div>
-                    <h3>¿Cómo te sientes?</h3>
-                    <p>Cuéntame cómo estás hoy y te acompañaré</p>
-                </div>
-
-                <div class="home-card glass card-hover" onclick="showSection('games')">
-                    <div class="home-card-icon">🎮</div>
-                    <h3>Juguemos juntos</h3>
-                    <p>Juegos divertidos para pasar el rato</p>
-                </div>
-
-                <div class="home-card glass card-hover" onclick="showSection('letters')">
-                    <div class="home-card-icon">💌</div>
-                    <h3>Cartas para ti</h3>
-                    <p>Palabras bonitas cuando las necesites</p>
-                </div>
-
-                <div class="home-card glass card-hover" onclick="showSection('photos')">
-                    <div class="home-card-icon">📸</div>
-                    <h3>Nuestros recuerdos</h3>
-                    <p>Momentos que quiero guardar siempre</p>
-                </div>
-            </div>
-
-            <!-- Joel Message -->
-            <div class="joel-section">
-                <div class="joel-photo">❤️</div>
-                <h2 class="section-title">Un mensaje de Joel</h2>
-                <p class="joel-message">
-                    "No quiero estar solamente en tus días felices; también quiero estar cuando necesites que alguien se quede."
-                </p>
-            </div>
-        </section>
-
-        <!-- Mood Section -->
-        <section id="mood" class="section">
-            <h2 class="section-title gradient-text">¿Cómo te sientes hoy, Milena?</h2>
-            <p class="section-subtitle">Selecciona cómo te sientes y te acompañaré</p>
-
-            <div class="mood-grid" id="mood-grid"></div>
-
-            <div class="mood-response glass" id="mood-response">
-                <p class="mood-phrase" id="mood-phrase"></p>
-                <div class="mood-activity">
-                    <h4>✨ Una pequeña actividad para ti</h4>
-                    <p id="mood-activity"></p>
-                </div>
-                <button class="btn-romantic" onclick="showLetterFromMood()">Leer una carta de Joel 💌</button>
-            </div>
-        </section>
-
-        <!-- Games Section -->
-        <section id="games" class="section">
-            <h2 class="section-title gradient-text">Juguemos juntos 🎮</h2>
-            <p class="section-subtitle">Elige un juego y diviértete</p>
-
-            <div class="games-grid">
-                <div class="game-card glass card-hover" onclick="startQuiz()">
-                    <div class="game-icon">💕</div>
-                    <h3>¿Cuánto nos conocemos?</h3>
-                    <p>Preguntas sobre nosotros</p>
-                    <button class="btn-romantic">Jugar</button>
-                </div>
-
-                <div class="game-card glass card-hover" onclick="startTruthOrDare()">
-                    <div class="game-icon">🎲</div>
-                    <h3>Verdad o reto romántico</h3>
-                    <p>Preguntas y retos divertidos</p>
-                    <button class="btn-romantic">Jugar</button>
-                </div>
-
-                <div class="game-card glass card-hover" onclick="startCardsGame()">
-                    <div class="game-icon">🃏</div>
-                    <h3>Elige una carta</h3>
-                    <p>Descubre un mensaje especial</p>
-                    <button class="btn-romantic">Jugar</button>
-                </div>
-
-                <div class="game-card glass card-hover" onclick="startCatchHearts()">
-                    <div class="game-icon">💖</div>
-                    <h3>Atrapa los corazones</h3>
-                    <p>Captura todos los corazones</p>
-                    <button class="btn-romantic">Jugar</button>
-                </div>
-
-                <div class="game-card glass card-hover" onclick="startMemoryGame()">
-                    <div class="game-icon">🧠</div>
-                    <h3>Juego de memoria</h3>
-                    <p>Encuentra las parejas</p>
-                    <button class="btn-romantic">Jugar</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Letters Section -->
-        <section id="letters" class="section">
-            <h2 class="section-title gradient-text">Cartas para ti 💌</h2>
-            <p class="section-subtitle">Palabras bonitas para cada momento</p>
-
-            <div class="letters-grid" id="letters-grid"></div>
-
-            <!-- Notes Form -->
-            <div style="margin-top: 60px;">
-                <h3 class="section-title" style="font-size: 2rem;">Déjame saber cómo estás 🤍</h3>
-                <div class="notes-form glass">
-                    <textarea class="input-romantic" id="note-input" placeholder="Escribe cómo te sientes, qué pasó hoy, algo que quieras recordar o una nota para Joel..."></textarea>
-                    <button class="btn-romantic" onclick="saveNote()">Guardar mi nota 💝</button>
-                </div>
-
-                <h3 style="margin-top: 40px; margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 1.5rem;">Mis recuerdos</h3>
-                <div class="notes-list" id="notes-list"></div>
-            </div>
-        </section>
-
-        <!-- Photos Section -->
-        <section id="photos" class="section">
-            <h2 class="section-title gradient-text">Nuestros momentos 📸</h2>
-            <p class="section-subtitle">"No importa dónde estemos, siempre quiero encontrar una forma de estar a tu lado."</p>
-
-            <div class="photos-grid" id="photos-grid"></div>
-        </section>
-    </div>
-
-    <!-- Game Modals -->
-    <div id="quiz-modal" class="game-modal">
-        <div class="game-content glass">
-            <button class="game-close" onclick="closeGame('quiz-modal')">✕</button>
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 24px;">¿Cuánto nos conocemos? 💕</h2>
-            <div id="quiz-content"></div>
+        <!-- Martes -->
+        <div onclick="openPoem('Martes', 'Constelaciones', 'El tiempo avanza sin detenerse,\npero en tus ojos todo se frena.\nVerte reír un solo segundo\nhace que cualquier día valga la pena.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Martes</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">Constelaciones</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">El tiempo avanza sin detenerse, pero en tus ojos todo se frena...</p>
         </div>
-    </div>
 
-    <div id="tod-modal" class="game-modal">
-        <div class="game-content glass">
-            <button class="game-close" onclick="closeGame('tod-modal')">✕</button>
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 24px;">Verdad o reto romántico 🎲</h2>
-            <div class="tod-display" id="tod-display">Presiona el botón para comenzar</div>
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn-romantic" onclick="getTruth()">Verdad ❤️</button>
-                <button class="btn-romantic" onclick="getDare()">Reto 💫</button>
-            </div>
+        <!-- Miércoles -->
+        <div onclick="openPoem('Miércoles', 'El centro del viaje', 'A mitad de semana me acuerdo de ti,\ny el cansancio parece desaparecer.\nEres ese abrazo silencioso\nque siempre quisiera tener.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Miércoles</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">El centro del viaje</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">A mitad de semana me acuerdo de ti, y el cansancio parece desaparecer...</p>
         </div>
-    </div>
 
-    <div id="cards-modal" class="game-modal">
-        <div class="game-content glass">
-            <button class="game-close" onclick="closeGame('cards-modal')">✕</button>
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 24px;">Elige una carta 🃏</h2>
-            <p style="margin-bottom: 24px;">Toca una carta para descubrir tu mensaje</p>
-            <div class="cards-grid" id="cards-grid"></div>
-            <div class="card-message" id="card-message" style="display: none;"></div>
+        <!-- Jueves -->
+        <div onclick="openPoem('Jueves', 'Cerca del refugio', 'Ya casi se apaga la rutina,\ny el pensamiento me lleva al mismo lugar:\na esa paz que tú me transmites,\nal hogar que en ti pude encontrar.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Jueves</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">Cerca del refugio</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">Ya casi se apaga la rutina, y el pensamiento me lleva al mismo lugar...</p>
         </div>
-    </div>
 
-    <div id="catch-modal" class="game-modal">
-        <div class="game-content glass">
-            <button class="game-close" onclick="closeGame('catch-modal')">✕</button>
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 24px;">Atrapa los corazones 💖</h2>
-            <div class="catch-score">Puntuación: <span id="catch-score">0</span></div>
-            <div class="catch-area" id="catch-area"></div>
-            <button class="btn-romantic" onclick="startCatchGame()">Comenzar</button>
+        <!-- Viernes -->
+        <div onclick="openPoem('Viernes', 'Promesa de calma', 'Llega el final de las horas largas,\nel alma respira una nueva canción.\nQué bonito saber que en mis días libres\ntú sigues siendo mi mejor opción.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Viernes</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">Promesa de calma</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">Llega el final de las horas largas, el alma respira una nueva canción...</p>
         </div>
-    </div>
 
-    <div id="memory-modal" class="game-modal">
-        <div class="game-content glass">
-            <button class="game-close" onclick="closeGame('memory-modal')">✕</button>
-            <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 24px;">Juego de memoria 🧠</h2>
-            <div class="memory-grid" id="memory-grid"></div>
-            <button class="btn-romantic" onclick="initMemoryGame()">Reiniciar</button>
+        <!-- Sábado -->
+        <div onclick="openPoem('Sábado', 'Tiempo contigo', 'Hoy el mundo camina más despacio,\nhay tiempo para soñar y mirar el sol.\nY entre todas las cosas hermosas,\nla más bella siempre serás tú, Milena.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Sábado</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">Tiempo contigo</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">Hoy el mundo camina más despacio, hay tiempo para soñar y mirar el sol...</p>
         </div>
-    </div>
 
-    <!-- Letter Modal -->
-    <div id="letter-modal" class="letter-modal">
-        <div class="letter-content glass">
-            <button class="game-close" onclick="closeLetter()">✕</button>
-            <h2 class="letter-title" id="letter-title"></h2>
-            <p class="letter-subtitle" id="letter-subtitle"></p>
-            <div class="letter-body" id="letter-body"></div>
-            <p class="letter-signature" id="letter-signature"></p>
+        <!-- Domingo -->
+        <div onclick="openPoem('Domingo', 'Atardecer sereno', 'El sol se oculta despacio en el horizonte,\npreparando al mundo para empezar otra vez.\nYo solo le pido a las estrellas\nque me permitan cuidarte semana a semana.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95 sm:col-span-2 md:col-span-1">
+          <span class="text-xs font-semibold uppercase text-rose-400 tracking-wider">Domingo</span>
+          <h3 class="text-base font-serif font-bold text-white mt-1">Atardecer sereno</h3>
+          <p class="text-xs text-rose-200/60 mt-2 line-clamp-2">El sol se oculta despacio en el horizonte, preparando al mundo para empezar...</p>
         </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: POEMAS MENSUALES (ENERO A DICIEMBRE) -->
+    <section id="sec-meses" class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-2xl font-serif font-bold text-white">Versos de Todo el Año 🌌</h2>
+        <p class="text-xs text-rose-300/70">Un poema corto para cada mes del calendario</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <!-- Enero -->
+        <div onclick="openPoem('Enero', 'Primer Destello', 'Año nuevo, mismos deseos:\ncuidar tu sonrisa todos los días.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Ene</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Primer Destello</h4>
+        </div>
+        <!-- Febrero -->
+        <div onclick="openPoem('Febrero', 'Mes del Cariño', 'Febrero te nombra en voz baja,\ncomo el abrazo que abriga en el frío.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Feb</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Mes del Cariño</h4>
+        </div>
+        <!-- Marzo -->
+        <div onclick="openPoem('Marzo', 'Florecer', 'Florece la vida en marzo,\ny en mi mente tú floreces más.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Mar</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Florecer</h4>
+        </div>
+        <!-- Abril -->
+        <div onclick="openPoem('Abril', 'Brisa Dulce', 'Lluvia suave sobre el tejado,\ny tu recuerdo abrigando mi alma.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Abr</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Brisa Dulce</h4>
+        </div>
+        <!-- Mayo -->
+        <div onclick="openPoem('Mayo', 'Luz Constante', 'El sol brilla más en mayo,\npero tu mirada ilumina mejor.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">May</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Luz Constante</h4>
+        </div>
+        <!-- Junio -->
+        <div onclick="openPoem('Junio', 'Solsticio', 'Días largos para pensarte,\nnoches cortas para soñarte.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Jun</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Solsticio</h4>
+        </div>
+        <!-- Julio -->
+        <div onclick="openPoem('Julio', 'Calidez', 'Mitad de año y sigo firme:\nquererte siempre es mi elección.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Jul</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Calidez</h4>
+        </div>
+        <!-- Agosto -->
+        <div onclick="openPoem('Agosto', 'Viento del Sur', 'Soplan vientos de agosto,\ny todos traen tu nombre.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Ago</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Viento del Sur</h4>
+        </div>
+        <!-- Septiembre -->
+        <div onclick="openPoem('Septiembre', 'Primavera', 'Nace la primavera en el aire,\ny mi cariño vuelve a renovarse.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Sep</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Primavera</h4>
+        </div>
+        <!-- Octubre -->
+        <div onclick="openPoem('Octubre', 'Atardeceres Dorados', 'Hojas doradas que caen,\ny mis ganas de verte que crecen.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Oct</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Dorados</h4>
+        </div>
+        <!-- Noviembre -->
+        <div onclick="openPoem('Noviembre', 'Noches Estrelladas', 'Se acerca el frío del año,\npero tú me mantienes abrigado.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Nov</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Noches</h4>
+        </div>
+        <!-- Diciembre -->
+        <div onclick="openPoem('Diciembre', 'Cierre de Año', 'El mejor regalo de cada año\nsiempre será tenerte a mi lado.')" class="p-4 rounded-xl glass-card text-center hover:border-rose-400 cursor-pointer transition-all active:scale-95">
+          <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">Dic</span>
+          <h4 class="text-xs font-serif font-bold text-white mt-1">Cierre Dulce</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: GALERÍA DE RECUERDOS Y CARTA DESTACADA -->
+    <section id="sec-parati" class="space-y-8">
+      <div>
+        <div class="text-center mb-4">
+          <h2 class="text-xl font-serif font-bold text-rose-100">Nuestras Fotografías ❤</h2>
+          <p class="text-xs text-rose-300/70">Momentos especiales guardados con amor</p>
+        </div>
+
+        <div class="relative rounded-3xl overflow-hidden glass-panel border border-rose-500/20 max-w-xl mx-auto shadow-2xl">
+          <div id="carousel-slide" class="h-64 sm:h-80 bg-rose-950/40 flex flex-col items-center justify-center p-2 text-center transition-all duration-300">
+            <img id="carousel-img" src="foto1.jpg" alt="Recuerdo" class="w-full h-full object-cover rounded-2xl" />
+          </div>
+
+          <!-- Controles Carrusel -->
+          <button onclick="prevPhoto()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-sm border border-rose-500/30 hover:bg-rose-900/80 transition-colors z-20">❮</button>
+          <button onclick="nextPhoto()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center backdrop-blur-sm border border-rose-500/30 hover:bg-rose-900/80 transition-colors z-20">❯</button>
+          
+          <div class="p-3 bg-stone-950/80 border-t border-rose-900/40 text-center">
+            <p id="carousel-caption" class="text-xs font-serif italic text-rose-200">
+              “No importa dónde estemos, siempre quiero encontrar una forma de estar a tu lado.”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensaje Personal de Joel -->
+      <div class="glass-panel rounded-3xl p-6 border border-rose-500/30 shadow-2xl">
+        <div class="flex flex-col sm:flex-row items-center gap-6">
+          <div class="w-28 h-28 rounded-2xl bg-purple-950/80 border-2 border-rose-500/40 overflow-hidden flex-shrink-0 shadow-lg">
+            <img src="joel.jpg" alt="Joel" class="w-full h-full object-cover" />
+          </div>
+          <div class="space-y-2 text-center sm:text-left">
+            <span class="text-xs font-semibold uppercase tracking-wider text-rose-400">Un mensaje de Joel</span>
+            <p class="text-base font-serif text-rose-100 font-semibold italic">
+              “No quiero estar solamente en tus días felices; también quiero estar cuando necesites que alguien se quede.”
+            </p>
+            <p class="text-xs text-rose-200/80 leading-relaxed">
+              Construí esta aplicación para recordarte cada día lo valiosa, única y especial que eres para mí.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: MINIJUEGO DE TRIVIA -->
+    <section id="sec-juegos" class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-xl font-serif font-bold text-rose-100">Preguntas sobre Nosotros 🎮</h2>
+        <p class="text-xs text-rose-300/70">¿Qué tanto recuerdas de nuestros detalles?</p>
+      </div>
+
+      <div class="glass-panel rounded-3xl p-6 border border-rose-500/30 max-w-xl mx-auto shadow-2xl">
+        <div id="quiz-container">
+          <div class="flex items-center justify-between mb-4 border-b border-rose-900/40 pb-3">
+            <span id="quiz-step" class="text-xs text-rose-400 font-semibold">Pregunta 1 de 3</span>
+            <span id="quiz-score" class="text-xs bg-rose-950 text-rose-300 px-2.5 py-1 rounded-full border border-rose-800/40">Puntos: 0</span>
+          </div>
+
+          <h3 id="quiz-question" class="text-base sm:text-lg font-serif font-semibold text-white mb-6">
+            ¿Cargando pregunta...?
+          </h3>
+
+          <div id="quiz-options" class="space-y-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: CARTAS ESPECIALES -->
+    <section id="sec-cartas" class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-xl font-serif font-bold text-rose-100">Cartas para Abrir 💌</h2>
+        <p class="text-xs text-rose-300/70">Elige una carta según lo que necesites leer en este momento</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- Carta 1 -->
+        <div onclick="openLetter('Para cuando me extrañes', 'Milena bella, si estás leyendo esto y me extrañas, quiero que sepas que yo también estoy pensando en ti. Aunque no esté físicamente a tu lado en este segundo, mi cariño y mis ganas de cuidarte siempre te acompañan. Pronto nos veremos y te daré un abrazo muy fuerte.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95 space-y-3">
+          <span class="text-3xl">💌</span>
+          <h3 class="text-sm font-serif font-bold text-rose-100">Para cuando me extrañes</h3>
+          <p class="text-xs text-rose-300/70">Abre esta carta cuando quieras sentirme cerca.</p>
+        </div>
+
+        <!-- Carta 2 -->
+        <div onclick="openLetter('Para cuando tengas un mal día', 'Respira profundo, Milena. Un mal día no significa una mala vida. Eres una mujer fuerte, inteligente y hermosa. No dejes que la prisa o los problemas de hoy apaguen tu luz. Aquí estoy yo para escucharte y apoyarte siempre.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95 space-y-3">
+          <span class="text-3xl">🌿</span>
+          <h3 class="text-sm font-serif font-bold text-rose-100">Para cuando tengas un mal día</h3>
+          <p class="text-xs text-rose-300/70">Un recordatorio dulce para calmar tu mente.</p>
+        </div>
+
+        <!-- Carta 3 -->
+        <div onclick="openLetter('Para cuando lo dudes todo', 'Si en algún momento dudas de ti o del futuro, recuerda por qué eres tan especial. Tienes un corazón hermoso y una forma de ser que me encanta. Nunca dudas de lo mucho que vales ni de todo lo que significas para mí.')" class="p-5 rounded-2xl glass-card hover:border-rose-400 cursor-pointer transition-all active:scale-95 space-y-3">
+          <span class="text-3xl">✨</span>
+          <h3 class="text-sm font-serif font-bold text-rose-100">Para cuando lo dudes todo</h3>
+          <p class="text-xs text-rose-300/70">Lee esto para recordar lo valiosa que eres.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: BLOC DE NOTAS -->
+    <section id="sec-notas" class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-xl font-serif font-bold text-rose-100">Notas y Pensamientos 📖</h2>
+        <p class="text-xs text-rose-300/70">Escribe aquí lo que quieras guardarle a Joel (se guarda solo en tu celular)</p>
+      </div>
+
+      <div class="glass-panel rounded-3xl p-6 border border-rose-500/30 max-w-xl mx-auto space-y-4 shadow-2xl">
+        <textarea id="note-input" rows="4" placeholder="Escribe un pensamiento, una nota o algo bonito que quieras recordar..." class="w-full bg-purple-950/30 text-rose-100 text-xs sm:text-sm p-4 rounded-2xl border border-purple-800/40 focus:outline-none focus:border-rose-500 placeholder-rose-400/40 resize-none"></textarea>
+        
+        <div class="flex justify-between items-center">
+          <span id="note-status" class="text-[11px] text-rose-400 italic"></span>
+          <button onclick="saveNote()" class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs shadow-lg transition-all active:scale-95">
+            Guardar Nota
+          </button>
+        </div>
+
+        <div class="border-t border-rose-900/40 pt-4 mt-2">
+          <h4 class="text-xs font-semibold text-rose-300 uppercase tracking-wider mb-3">Tus notas guardadas:</h4>
+          <div id="notes-list" class="space-y-2 max-h-48 overflow-y-auto no-scrollbar"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== CAPA 40: BARRA DE NAVEGACIÓN INFERIOR ==================== -->
+  <nav class="fixed bottom-0 left-0 right-0 z-40 glass-panel border-t border-rose-900/40 py-2.5 px-2">
+    <div class="max-w-lg mx-auto grid grid-cols-6 text-center text-[9px] sm:text-[10px] font-medium">
+      <button onclick="scrollToSec('sec-inicio')" class="text-rose-300/70 hover:text-rose-300 flex flex-col items-center gap-1 active:scale-90 transition-transform">
+        <span class="text-base">🏠</span>
+        <span>Inicio</span>
+      </button>
+
+      <button onclick="scrollToSec('sec-diarios')" class="text-rose-300/70 hover:text-rose-300 flex flex-col items-center gap-1 active:scale-90 transition-transform">
+        <span class="text-base">🗓️</span>
+        <span>Semana</span>
+      </button>
+
+      <button onclick="scrollToSec('sec-meses')" class="text-rose-300/70 hover:text-rose-300 flex flex-col items-center gap-1 active:scale-90 transition-transform">
+        <span class="text-base">🌌</span>
+        <span>Meses</span>
+      </button>
+
+      <button onclick="scrollToSec('sec-parati')" class="text-rose-300/70 hover:text-rose-300 flex flex-col items-center gap-1 active:scale-90 transition-transform">
+        <span class="text-base">❤️</span>
+        <span>Para ti</span>
+      </button>
+
+      <button onclick="scrollToSec('sec-cartas')" class="text-rose-300/70 hover:text-rose-300 flex flex-col items-center gap-1 active:scale-90 transition-transform">
+        <span class="text-base">💌</span>
+        <span>Cartas</span>
+      </button>
+
+      <button onclick="scrollToSec('sec-notas')" class="text-rose-300/70 hover:text-rose-300 flex flex-col items-center gap-1 active:scale-90 transition-transform">
+        <span class="text-base">📖</span>
+        <span>Notas</span>
+      </button>
     </div>
+  </nav>
 
-    <script>
-        // Data
-        const moods = [
-            { key: 'happy', emoji: '😊', label: 'Feliz', phrase: 'Tu sonrisa merece quedarse mucho tiempo más. Que este día te abrace tanto como tú abrazas la vida.', activity: 'Baila una canción que te haga sonreír. Cierra los ojos y siente la música.', letterId: 'happy' },
-            { key: 'inLove', emoji: '🥰', label: 'Enamorada', phrase: 'Ese brillo en tus ojos es el mismo que yo veo cada vez que pienso en ti.', activity: 'Escribe tres cosas que amas de la persona en la que estás pensando.', letterId: 'inLove' },
-            { key: 'sad', emoji: '😔', label: 'Triste', phrase: 'Está bien no estar bien todos los días, Milena. No tienes que cargar con todo sola. Aquí estoy yo.', activity: 'Respira profundo 4 veces. Inhala en 4 segundos, sostén 4, exhala en 6. Estoy contigo.', letterId: 'sad' },
-            { key: 'angry', emoji: '😡', label: 'Enojada', phrase: 'Tu enojo también es válido. Respira, suéltalo poco a poco. Después hablamos, después sanamos.', activity: 'Escribe en un papel lo que te enoja y luego rómpelo. Es tuyo, no de nadie más.', letterId: 'angry' },
-            { key: 'tired', emoji: '😴', label: 'Cansada', phrase: 'Descansa, Milena. No tienes que ser fuerte todo el tiempo. Yo cuido de ti mientras duermes.', activity: 'Tómate 5 minutos sin pantallas. Solo tú, tu respiración y el silencio.', letterId: 'tired' },
-            { key: 'anxious', emoji: '😰', label: 'Ansiosa', phrase: 'Todo va a estar bien. Una cosa a la vez. Yo te sostengo mientras el mundo se calma.', activity: 'Nombra 5 cosas que puedes ver, 4 que puedes tocar, 3 que puedes oír. Vuelve al presente.', letterId: 'anxious' },
-            { key: 'heartbroken', emoji: '💔', label: 'Con el corazón roto', phrase: 'Aunque duela, no estás rota. Estás sintiendo. Y yo voy a estar aquí hasta que vuelvas a brillar.', activity: 'Abraza algo suave. O abraza una almohada pensando que soy yo.', letterId: 'heartbroken' },
-            { key: 'motivated', emoji: '😎', label: 'Motivada', phrase: 'Confía en ti, Milena. Hay cosas bonitas esperándote, y tú mereces cada una.', activity: 'Escribe una meta pequeña para hoy. Solo una. Yo creo en ti.', letterId: 'motivated' },
-            { key: 'calm', emoji: '🤍', label: 'Tranquila', phrase: 'Qué bonito cuando el alma se aquieta. Quédate en esta paz un ratito más.', activity: 'Cierra los ojos. Escucha. Respira. Este momento es solo tuyo.', letterId: 'calm' },
-            { key: 'needLove', emoji: '🥺', label: 'Necesito cariño', phrase: 'Aquí estoy, Milena. Aquí estoy yo. Te quiero, te leo, te abrazo con estas palabras.', activity: 'Ponte la mano en el pecho. Siente tu corazón latir. Ese latido es mío también.', letterId: 'needLove' }
-        ];
+  <!-- ==================== CAPA 50: MODAL ESTADO DE ÁNIMO ==================== -->
+  <div id="mood-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="max-w-md w-full glass-panel rounded-3xl p-6 sm:p-8 border border-rose-500/30 shadow-2xl text-center relative">
+      <button onclick="closeMoodModal()" class="absolute top-4 right-4 text-rose-400 text-xl font-bold p-1 hover:text-white">✕</button>
+      <div id="mood-emoji" class="text-5xl mb-2">😊</div>
+      <h3 class="text-xl font-serif font-bold text-white mt-2">
+        Te sientes <span id="mood-title" class="text-rose-300">Feliz</span>
+      </h3>
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-purple-950/60 to-rose-950/60 border border-rose-800/30 my-5">
+        <p id="mood-quote" class="text-rose-100 font-serif italic text-sm leading-relaxed">
+          “Tu sonrisa merece quedarse mucho tiempo más.”
+        </p>
+      </div>
+      <p id="mood-activity" class="text-xs text-rose-200/80 mb-6 bg-purple-950/30 p-3 rounded-xl border border-purple-900/30">
+        Escribe tres momentos bonitos que te pasaron hoy.
+      </p>
+      <button onclick="closeMoodModal()" class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs shadow-lg transition-all">
+        Gracias, Joel ❤
+      </button>
+    </div>
+  </div>
 
-        const letters = [
-            { id: 'sad', title: 'Para cuando estés triste', subtitle: 'Una carta para abrazarte', content: 'Milena,\n\nSé que hoy pesa todo un poco más. Sé que a veces el pecho se llena de cosas que no caben y no sabes dónde ponerlas. No tienes que explicármelas todas, no tienes que justificarlas.\n\nSolo quiero que sepas una cosa: no estás sola. Ni hoy, ni mañana, ni nunca.\n\nLlora si necesitas llorar. Quédate en silencio si lo necesitas. Pero no te escondas de mí. Yo te quiero entera, también en los días grises.\n\nDescansa. Mañana será otro día, y yo seguiré aquí.', signature: '— Joel, el chico que no te suelta la mano' },
-            { id: 'happy', title: 'Para cuando estés feliz', subtitle: 'Para que guardes esta sonrisa', content: 'Milena,\n\nMe encanta cuando estás así. Me encanta saber que hoy el mundo te trató bonito, o que tú trataste bonito al mundo.\n\nGuárdame un pedacito de esta felicidad, ¿sí? De esas que me cuentas con los ojos brillando. De esas que me hacen sentir que todo lo que hago tiene sentido.\n\nBaila, ríe fuerte, come algo rico, manda ese mensaje que tenías guardado. Hoy es tuyo.', signature: '— Joel, que se alegra contigo' },
-            { id: 'inLove', title: 'Para cuando estés enamorada', subtitle: 'Un susurro al oído', content: 'Milena,\n\nEse brillo que tienes cuando estás enamorada es mi cosa favorita del universo.\n\nNo sé si es por mí, por alguien más, por la vida misma, por una canción… pero me gusta verte así. Me gusta saber que tu corazón late tan fuerte que casi se escucha.\n\nEnamórate de todo lo bonito. De un atardecer, de una canción, de un café, de ti misma. Y si es de mí, mejor todavía.', signature: '— Joel, que se enamora contigo' },
-            { id: 'angry', title: 'Para cuando estés enojada', subtitle: 'Tu enojo también importa', content: 'Milena,\n\nTienes derecho a estar enojada. Tienes derecho a decir "hasta aquí". Tienes derecho a no sonreír cuando no te nace.\n\nNo te pido que lo sueltes ya. Solo te pido que no te lo guardes todo adentro. Escríbelo, gritarlo en una almohada, camina fuerte, patalea si hace falta.\n\nY cuando se te pase un poquito, aquí estoy. Sin juicio. Solo contigo.', signature: '— Joel, que te quiere incluso cuando ruges' },
-            { id: 'tired', title: 'Para cuando estés cansada', subtitle: 'Descansa, yo me quedo', content: 'Milena,\n\nSé que has cargado mucho. Sé que a veces el cuerpo pide parar y la cabeza no deja. Pero hoy te pido un favor: suéltalo un ratito.\n\nNo tienes que ser fuerte ahora. No tienes que responder mensajes. No tienes que cumplirle a nadie. Solo respira.\n\nCierra los ojos. Imagina que te abrazo. Imagina que te digo bajito: "ya puedes descansar".\n\nYo me quedo cuidando todo mientras tú duermes.', signature: '— Joel, que te cuida el sueño' },
-            { id: 'anxious', title: 'Para cuando sientas ansiedad', subtitle: 'Vuelve a tu cuerpo', content: 'Milena,\n\nRespira conmigo. Inhala… uno, dos, tres, cuatro. Sostén… uno, dos, tres, cuatro. Exhala… uno, dos, tres, cuatro, cinco, seis.\n\nOtra vez.\n\nLo que sientes es real, pero no es para siempre. Va a pasar. Como pasa todo. Y yo voy a estar aquí cuando pase.\n\nNo tienes que resolverlo todo hoy. Solo tienes que llegar al siguiente minuto. Y luego al siguiente. Yo te los voy contando contigo.', signature: '— Joel, que respira contigo' },
-            { id: 'heartbroken', title: 'Para cuando te duela el corazón', subtitle: 'No estás rota', content: 'Milena,\n\nSé que duele. Sé que a veces el pecho se siente como si se hubiera roto algo adentro. Pero escúchame bien: no estás rota.\n\nEstás sintiendo. Y sentir fuerte no te hace débil, te hace humana. Te hace tú.\n\nNo te apures en sanar. No te apures en "estar bien". Tómate el tiempo que necesites. Yo no me voy a cansar de esperarte.\n\nY cuando vuelvas a sonreír, va a ser una sonrisa nueva. Más tuya que nunca.', signature: '— Joel, que te espera sin prisa' },
-            { id: 'motivated', title: 'Para cuando te sientas motivada', subtitle: 'Que nada te apague', content: 'Milena,\n\nAsí te quiero ver. Con esa chispa, con esa fuerza, con esa manera tuya de decir "yo puedo".\n\nNo dejes que nadie te diga que es demasiado. No dejes que nadie te achique. Tú puedes con cosas que ni te imaginas.\n\nHoy es un buen día para dar ese paso. El pequeño. El que tenías miedo de dar. Yo te miro desde aquí y ya estoy orgulloso de ti.', signature: '— Joel, tu fan número uno' },
-            { id: 'calm', title: 'Para cuando estés en paz', subtitle: 'Quédate aquí un ratito', content: 'Milena,\n\nQué lindo cuando todo se aquieta. Cuando el ruido de afuera baja y puedes escucharte.\n\nNo te apures por llenar este silencio. Déjalo estar. Respira. Mira por la ventana. Siente lo que se siente sentir paz.\n\nYo también estoy en paz cuando sé que tú lo estás.', signature: '— Joel, en silencio contigo' },
-            { id: 'needLove', title: 'Para cuando necesites cariño', subtitle: 'Aquí estoy', content: 'Milena,\n\nSi estás leyendo esto es porque necesitabas un abrazo. Y aquí va, envuelto en palabras.\n\nTe quiero. Te quiero con tus cosas buenas y con las que te cuestan. Te quiero en los días fáciles y en los difíciles. Te quiero entera.\n\nNo tienes que ganarte mi cariño. No tienes que hacer nada especial para merecerlo. Ya lo tienes. Siempre lo tuviste.\n\nPonte la mano en el pecho. Siente ese latido. Ese latido también es mío.', signature: '— Joel, el chico que te quiere siempre' },
-            { id: 'sleep', title: 'Para antes de dormir', subtitle: 'Buenas noches, mi niña', content: 'Milena,\n\nYa cierra los ojitos. Suelta el celular, suelta el día, suelta todo.\n\nLo que pasó hoy, ya pasó. Lo que venga mañana, ya llegará. Ahora solo existes tú, tu cama, tu respiración y yo pensando en ti.\n\nQue sueñes bonito. Que descanses de verdad. Que mañana despiertes un poquito más cerca de todo lo bueno que mereces.\n\nBuenas noches, Milena.', signature: '— Joel, que te cuida el sueño' },
-            { id: 'special', title: 'Una carta especial de Joel', subtitle: 'Para ti, solo para ti', content: 'Milena,\n\nNo soy de las personas que dicen cosas bonitas porque sí. Soy de las que las dicen porque las piensan. Y esto lo pienso mucho.\n\nQuiero estar en tu vida. No solo en los días de risas y planes, también en los días en los que no quieras hablar. No solo cuando todo salga bien, también cuando todo se complique.\n\nNo quiero ser un recuerdo bonito de alguien que pasó. Quiero ser el chico que se queda. El que te escucha, el que te acompaña, el que te cuida cuando tú te olvidas de cuidarte.\n\nNo te prometo perfección. Te prometo presencia. Te prometo intentar, todos los días, ser el lugar seguro al que puedas volver.\n\nPorque tú, Milena, mereces eso y mucho más. Y yo quiero dártelo.', signature: '— Joel, el chico que quiere estar a tu lado siempre ❤️' }
-        ];
+  <!-- ==================== CAPA 50: MODAL CARTAS Y POEMAS ==================== -->
+  <div id="letter-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="max-w-md w-full glass-panel rounded-3xl p-6 sm:p-8 border border-rose-500/30 shadow-2xl text-center relative">
+      <button onclick="closeLetterModal()" class="absolute top-4 right-4 text-rose-400 text-xl font-bold p-1 hover:text-white">✕</button>
+      <span id="letter-icon" class="text-4xl mb-2 block">💌</span>
+      <h3 id="letter-title" class="text-xl font-serif font-bold text-white mb-1">
+        Título
+      </h3>
+      <p id="letter-subtitle" class="text-xs text-rose-400 font-medium mb-4"></p>
+      <div class="p-5 rounded-2xl bg-purple-950/40 border border-purple-800/30 text-center mb-6">
+        <p id="letter-body" class="text-xs sm:text-sm text-rose-100 leading-relaxed font-serif italic whitespace-pre-line">
+          Contenido...
+        </p>
+      </div>
+      <button onclick="closeLetterModal()" class="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs shadow-lg transition-all">
+        Guardar en el corazón ❤️
+      </button>
+    </div>
+  </div>
 
-        const quizQuestions = [
-            { q: '¿Cuál sería nuestro viaje ideal juntos?', options: ['Una playa tranquila al atardecer', 'Una ciudad llena de historia y cafés', 'Una cabaña en el bosque con chimenea', 'Cualquier lugar, con tal de que estemos juntos'], correct: 3, explanation: 'Porque lo importante no es el lugar, sino con quién lo vives ❤️' },
-            { q: '¿Qué momento juntos recuerdas con más cariño?', options: ['La primera vez que nos vimos', 'Una conversación larga en la noche', 'Una risa que no pudimos parar', 'Cualquier momento en que me sentí segura contigo'], correct: 3, explanation: 'Los momentos que importan son los que te hacen sentir en casa 🤍' },
-            { q: '¿Qué cosa pequeña te hace sonreír?', options: ['Un mensaje inesperado mío', 'Una canción que nos identifica', 'Un café caliente en un día frío', 'Todas las anteriores'], correct: 3, explanation: 'Las cosas pequeñas son las que hacen grande a una vida 😊' },
-            { q: '¿Qué lugar te gustaría conocer conmigo?', options: ['París, la ciudad del amor', 'Japón, entre cerezos y templos', 'Un pueblito tranquilo perdido en el mapa', 'Cualquier lugar, si es contigo'], correct: 3, explanation: 'El destino no importa cuando la compañía es la correcta ✨' },
-            { q: '¿Qué es lo que más valoras de nosotros?', options: ['Que podemos hablar de todo', 'Que nos hacemos reír', 'Que nos cuidamos', 'Todo junto'], correct: 3, explanation: 'Porque nosotros no somos una cosa sola, somos muchas cosas bonitas 💕' },
-            { q: '¿Cómo te gusta que te demuestre que te quiero?', options: ['Con palabras bonitas', 'Con pequeños detalles', 'Con tiempo de calidad', 'Con un poco de todo'], correct: 3, explanation: 'Y yo voy a seguir intentándolo de todas las formas posibles 🌹' }
-        ];
+  <!-- ==================== LÓGICA JAVASCRIPT ==================== -->
+  <script>
+    // ==================== 1. MOTOR DEL UNIVERSO ULTRA HD (CANVAS 2D) ====================
+    const canvas = document.getElementById('universe-canvas');
+    const ctx = canvas.getContext('2d');
 
-        const truthOrDare = {
-            verdades: [
-                '¿Cuál fue el primer momento en que pensaste en mí?',
-                '¿Qué es lo que más te gusta de nosotros?',
-                '¿Qué canción te recuerda a mí?',
-                '¿Cuál es tu recuerdo favorito conmigo?',
-                '¿Qué es algo que nunca me has dicho pero sientes?',
-                '¿Qué te hace sentir segura conmigo?',
-                '¿Cuál es tu lugar favorito para imaginar que estamos juntos?',
-                '¿Qué es lo que más te gusta de ti?',
-                '¿Qué te gustaría que hiciéramos juntos algún día?',
-                '¿Qué cosa pequeña te enamora de mí?'
-            ],
-            retos: [
-                'Mándame un audio diciéndome algo bonito',
-                'Escribe mi nombre con el dedo en el aire y mándame una foto del gesto',
-                'Dime tres cosas que te gustan de ti en voz alta',
-                'Mándame una canción que te haga pensar en mí',
-                'Escribe una frase bonita para mí y mándamela',
-                'Hazme una pregunta que siempre quisiste hacerme',
-                'Cuéntame un sueño que tengas',
-                'Dime algo que te haga feliz hoy',
-                'Mándame un emoji que represente cómo te sientes ahora',
-                'Abraza algo fuerte pensando que soy yo'
-            ]
-        };
+    let stars = [];
+    const numStars = 220;
 
-        const cardMessages = [
-            'Eres la casualidad más bonita que me pudo pasar.',
-            'Si el mundo se acabara mañana, querría pasarlo contigo.',
-            'Contigo aprendí que el cariño también se demuestra quedándose.',
-            'No hay prisa. Contigo todo tiene el tiempo perfecto.',
-            'Tu risa es mi lugar favorito del mundo.',
-            'Eres más fuerte de lo que crees, más querida de lo que piensas y más mía de lo que imaginas.',
-            'Si pudiera pedir un deseo, pediría más días como los que vivo contigo.',
-            'No te cambio por nada. Ni por nada, ni por nadie.',
-            'Gracias por existir, por quedarte, por ser tú.',
-            'Te quiero así, entera, con todo y tus días difíciles.',
-            'Contigo aprendí lo que significa querer bien.',
-            'Eres mi persona favorita para compartir el silencio.'
-        ];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    }
 
-        const photos = [
-            { src: 'assets/photos/foto1.jpg', caption: 'Nosotros ❤️' },
-            { src: 'assets/photos/foto2.jpg', caption: 'Un día bonito juntos' },
-            { src: 'assets/photos/foto3.jpg', caption: 'De esos momentos que quiero repetir' },
-            { src: 'assets/photos/foto4.jpg', caption: 'Tu sonrisa, mi lugar favorito' },
-            { src: 'assets/photos/foto5.jpg', caption: 'Siempre tú, siempre yo' }
-        ];
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 0.3,
+          color: ['#ffffff', '#fecdd3', '#e0e7ff', '#f472b6', '#c084fc'][Math.floor(Math.random() * 5)],
+          alpha: Math.random(),
+          speed: Math.random() * 0.015 + 0.005,
+          vy: (Math.random() - 0.5) * 0.15,
+          vx: (Math.random() - 0.5) * 0.15
+        });
+      }
+    }
 
-        // State
-        let currentMood = null;
-        let quizIndex = 0;
-        let quizScore = 0;
-        let catchInterval = null;
-        let catchScore = 0;
-        let memoryCards = [];
-        let flippedCards = [];
-        let matchedPairs = 0;
+    function drawUniverse() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Initialize
-        function init() {
-            renderMoods();
-            renderLetters();
-            renderPhotos();
-            renderNotes();
-            createFloatingHearts();
+      // Fondo Galáctico con Gradiente
+      let grad = ctx.createRadialGradient(
+        canvas.width / 2, canvas.height / 2, 100,
+        canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height)
+      );
+      grad.addColorStop(0, '#150523');
+      grad.addColorStop(0.5, '#0a0112');
+      grad.addColorStop(1, '#020005');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Renderizar Estrellas
+      stars.forEach(star => {
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) {
+          star.speed = -star.speed;
         }
 
-        // Welcome Screen
-        function enterApp() {
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('app').style.display = 'block';
-            tryPlayMusic();
+        star.x += star.vx;
+        star.y += star.vy;
+
+        if (star.x < 0) star.x = canvas.width;
+        if (star.x > canvas.width) star.x = 0;
+        if (star.y < 0) star.y = canvas.height;
+        if (star.y > canvas.height) star.y = 0;
+
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, Math.min(1, star.alpha));
+        ctx.fillStyle = star.color;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Resplandor en estrellas más grandes
+        if (star.radius > 1.2) {
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = star.color;
+          ctx.fill();
         }
+        ctx.restore();
+      });
 
-        // Music
-        function tryPlayMusic() {
-            const audio = document.getElementById('bg-music');
-            audio.volume = 0.5;
-            audio.play().catch(() => {
-                console.log('Autoplay bloqueado. La música comenzará cuando el usuario interactúe.');
-            });
-        }
+      requestAnimationFrame(drawUniverse);
+    }
 
-        function toggleMusic() {
-            const audio = document.getElementById('bg-music');
-            const btn = document.getElementById('music-toggle');
-            
-            if (audio.paused) {
-                audio.play();
-                btn.classList.add('playing');
-                btn.textContent = '🎵';
-            } else {
-                audio.pause();
-                btn.classList.remove('playing');
-                btn.textContent = '🔇';
-            }
-        }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    drawUniverse();
 
-        function changeVolume(value) {
-            const audio = document.getElementById('bg-music');
-            audio.volume = value / 100;
-        }
+    // ==================== 2. CONTROL BIENVENIDA & MÚSICA ====================
+    function closeWelcome() {
+      const modal = document.getElementById('welcome-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => modal.classList.add('hidden'), 500);
+      playMusic();
+    }
 
-        // Navigation
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            
-            document.getElementById(sectionId).classList.add('active');
-            event.currentTarget.classList.add('active');
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    const audio = document.getElementById('audio-player');
+    const musicBtn = document.getElementById('music-btn');
+    const musicIcon = document.getElementById('music-icon');
+    const musicText = document.getElementById('music-text');
+    let isPlaying = false;
 
-        // Moods
-        function renderMoods() {
-            const grid = document.getElementById('mood-grid');
-            grid.innerHTML = moods.map(mood => `
-                <div class="mood-card glass card-hover" onclick="selectMood('${mood.key}')">
-                    <div class="mood-emoji">${mood.emoji}</div>
-                    <div class="mood-label">${mood.label}</div>
-                </div>
-            `).join('');
-        }
+    function playMusic() {
+      audio.play().then(() => {
+        isPlaying = true;
+        musicIcon.innerText = '⏸️';
+        musicText.innerText = 'Pausar música';
+      }).catch(err => console.log("Autoplay bloqueado:", err));
+    }
 
-        function selectMood(key) {
-            currentMood = moods.find(m => m.key === key);
-            
-            document.getElementById('mood-phrase').textContent = currentMood.phrase;
-            document.getElementById('mood-activity').textContent = currentMood.activity;
-            document.getElementById('mood-response').classList.add('active');
-            
-            document.getElementById('mood-response').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        musicIcon.innerText = '🎵';
+        musicText.innerText = 'Reproducir música';
+      } else {
+        playMusic();
+      }
+    }
 
-        function showLetterFromMood() {
-            if (!currentMood) return;
-            const letter = letters.find(l => l.id === currentMood.letterId);
-            if (letter) showLetter(letter);
-        }
+    // ==================== 3. MODAL DE POEMAS ====================
+    function openPoem(timeframe, title, body) {
+      document.getElementById('letter-icon').innerText = '✨';
+      document.getElementById('letter-title').innerText = title;
+      document.getElementById('letter-subtitle').innerText = 'Poema de ' + timeframe;
+      document.getElementById('letter-body').innerText = body;
+      document.getElementById('letter-modal').classList.remove('hidden');
+    }
 
-        // Letters
-        function renderLetters() {
-            const grid = document.getElementById('letters-grid');
-            grid.innerHTML = letters.map(letter => `
-                <div class="letter-card glass card-hover" onclick='showLetter(${JSON.stringify(letter)})'>
-                    <div class="letter-icon">💌</div>
-                    <h3>${letter.title}</h3>
-                    <p>${letter.subtitle}</p>
-                </div>
-            `).join('');
-        }
+    function openLetter(title, body) {
+      document.getElementById('letter-icon').innerText = '💌';
+      document.getElementById('letter-title').innerText = title;
+      document.getElementById('letter-subtitle').innerText = 'Carta Especial';
+      document.getElementById('letter-body').innerText = body;
+      document.getElementById('letter-modal').classList.remove('hidden');
+    }
 
-        function showLetter(letter) {
-            document.getElementById('letter-title').textContent = letter.title;
-            document.getElementById('letter-subtitle').textContent = letter.subtitle;
-            document.getElementById('letter-body').textContent = letter.content;
-            document.getElementById('letter-signature').textContent = letter.signature;
-            document.getElementById('letter-modal').classList.add('active');
-        }
+    function closeLetterModal() {
+      document.getElementById('letter-modal').classList.add('hidden');
+    }
 
-        function closeLetter() {
-            document.getElementById('letter-modal').classList.remove('active');
-        }
+    // ==================== 4. ESTADOS DE ÁNIMO ====================
+    function selectMood(title, emoji, quote, activity) {
+      document.getElementById('mood-title').innerText = title;
+      document.getElementById('mood-emoji').innerText = emoji;
+      document.getElementById('mood-quote').innerText = "“" + quote + "”";
+      document.getElementById('mood-activity').innerText = activity;
+      document.getElementById('mood-modal').classList.remove('hidden');
+    }
 
-        // Notes
-        function saveNote() {
-            const input = document.getElementById('note-input');
-            const text = input.value.trim();
-            
-            if (!text) {
-                alert('Escribe algo antes de guardar ❤️');
-                return;
-            }
+    function closeMoodModal() {
+      document.getElementById('mood-modal').classList.add('hidden');
+    }
 
-            const notes = JSON.parse(localStorage.getItem('milena-notes') || '[]');
-            notes.unshift({
-                id: Date.now(),
-                text: text,
-                date: new Date().toLocaleString('es-ES', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric', 
-                    hour: '2-digit', 
-                    minute: '2-digit' 
-                })
-            });
+    // ==================== 5. CARRUSEL FOTOGRAFÍAS ====================
+    const photos = [
+      { src: 'foto1.jpg', caption: '“No importa dónde estemos, siempre quiero encontrar una forma de estar a tu lado.”' },
+      { src: 'foto2.jpg', caption: '“Cada sonrisa tuya guarda un motivo por el cual hacer las cosas bien.”' },
+      { src: 'foto3.jpg', caption: '“Contigo los momentos simples se vuelven memorables.”' }
+    ];
+    let currentPhotoIndex = 0;
 
-            localStorage.setItem('milena-notes', JSON.stringify(notes));
-            input.value = '';
-            renderNotes();
-            
-            alert('¡Nota guardada con amor! 💝');
-        }
+    function updatePhoto() {
+      const photo = photos[currentPhotoIndex];
+      document.getElementById('carousel-img').src = photo.src;
+      document.getElementById('carousel-caption').innerText = photo.caption;
+    }
 
-        function renderNotes() {
-            const notes = JSON.parse(localStorage.getItem('milena-notes') || '[]');
-            const list = document.getElementById('notes-list');
-            
-            if (notes.length === 0) {
-                list.innerHTML = '<p style="text-align: center; opacity: 0.6;">Aún no hay notas. Escribe la primera 💕</p>';
-                return;
-            }
+    function nextPhoto() {
+      currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+      updatePhoto();
+    }
 
-            list.innerHTML = notes.map(note => `
-                <div class="note-item">
-                    <div class="note-date">${note.date}</div>
-                    <div class="note-text">${note.text}</div>
-                </div>
-            `).join('');
-        }
+    function prevPhoto() {
+      currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+      updatePhoto();
+    }
 
-        // Photos
-        function renderPhotos() {
-            const grid = document.getElementById('photos-grid');
-            grid.innerHTML = photos.map(photo => `
-                <div class="photo-card glass card-hover">
-                    <div class="photo-placeholder">📷</div>
-                    <div class="photo-caption">${photo.caption}</div>
-                </div>
-            `).join('');
-        }
+    // ==================== 6. TRIVIA DE PREGUNTAS ====================
+    const quizData = [
+      {
+        question: "¿Qué es lo que más le gusta a Joel de Milena?",
+        options: ["Su sonrisa y su forma de ser", "Todo sin excepción", "Su mirada dulce"],
+        correct: 1
+      },
+      {
+        question: "¿Cuál es el superpoder de Milena?",
+        options: ["Hacer feliz a Joel en un segundo", "Iluminar cualquier lugar al que entra", "Todas las anteriores"],
+        correct: 2
+      },
+      {
+        question: "¿Cuál es la promesa principal de Joel?",
+        options: ["Estar siempre a su lado y cuidarla", "Invitarla a comer todos los fines de semana", "Hacerle una app cada año"],
+        correct: 0
+      }
+    ];
 
-        // Games
-        function closeGame(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-            if (modalId === 'catch-modal' && catchInterval) {
-                clearInterval(catchInterval);
-            }
-        }
+    let currentQuizIndex = 0;
+    let score = 0;
 
-        // Quiz Game
-        function startQuiz() {
-            quizIndex = 0;
-            quizScore = 0;
-            document.getElementById('quiz-modal').classList.add('active');
-            showQuizQuestion();
-        }
+    function loadQuiz() {
+      const container = document.getElementById('quiz-container');
+      if (currentQuizIndex >= quizData.length) {
+        container.innerHTML = `
+          <div class="text-center py-6 space-y-4">
+            <span class="text-5xl">🎉</span>
+            <h3 class="text-xl font-serif font-bold text-white">¡Completaste la trivia!</h3>
+            <p class="text-xs text-rose-200">Lograste ${score} de ${quizData.length} puntos. Para Joel, siempre ganas ❤</p>
+            <button onclick="resetQuiz()" class="px-5 py-2.5 rounded-xl bg-rose-600 text-white text-xs font-medium">Volver a jugar</button>
+          </div>
+        `;
+        return;
+      }
 
-        function showQuizQuestion() {
-            if (quizIndex >= quizQuestions.length) {
-                showQuizResult();
-                return;
-            }
+      const q = quizData[currentQuizIndex];
+      document.getElementById('quiz-step').innerText = `Pregunta ${currentQuizIndex + 1} de ${quizData.length}`;
+      document.getElementById('quiz-score').innerText = `Puntos: ${score}`;
+      document.getElementById('quiz-question').innerText = q.question;
 
-            const q = quizQuestions[quizIndex];
-            const content = document.getElementById('quiz-content');
-            
-            content.innerHTML = `
-                <div class="quiz-question">${q.q}</div>
-                <div class="quiz-options">
-                    ${q.options.map((opt, i) => `
-                        <div class="quiz-option" onclick="selectQuizOption(${i})">${opt}</div>
-                    `).join('')}
-                </div>
-            `;
-        }
+      const optsContainer = document.getElementById('quiz-options');
+      optsContainer.innerHTML = '';
 
-        function selectQuizOption(index) {
-            const q = quizQuestions[quizIndex];
-            const options = document.querySelectorAll('.quiz-option');
-            
-            options.forEach(opt => opt.style.pointerEvents = 'none');
-            options[index].classList.add('selected');
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = "w-full p-3.5 rounded-xl bg-purple-950/40 border border-purple-800/40 text-left text-xs text-rose-100 hover:border-rose-400 hover:bg-purple-900/40 transition-all active:scale-98";
+        btn.innerText = opt;
+        btn.onclick = () => answerQuiz(idx);
+        optsContainer.appendChild(btn);
+      });
+    }
 
-            if (index === q.correct) {
-                quizScore++;
-            }
+    function answerQuiz(selectedIdx) {
+      if (selectedIdx === quizData[currentQuizIndex].correct) {
+        score++;
+      }
+      currentQuizIndex++;
+      loadQuiz();
+    }
 
-            setTimeout(() => {
-                const content = document.getElementById('quiz-content');
-                content.innerHTML += `
-                    <div class="quiz-explanation">${q.explanation}</div>
-                    <button class="btn-romantic" style="margin-top: 20px;" onclick="nextQuizQuestion()">
-                        ${quizIndex < quizQuestions.length - 1 ? 'Siguiente pregunta →' : 'Ver resultado ❤️'}
-                    </button>
-                `;
-            }, 500);
-        }
+    function resetQuiz() {
+      currentQuizIndex = 0;
+      score = 0;
+      loadQuiz();
+    }
 
-        function nextQuizQuestion() {
-            quizIndex++;
-            showQuizQuestion();
-        }
+    // ==================== 7. BLOC DE NOTAS CON LOCALSTORAGE ====================
+    function saveNote() {
+      const input = document.getElementById('note-input');
+      const text = input.value.trim();
+      if (!text) return;
 
-        function showQuizResult() {
-            const content = document.getElementById('quiz-content');
-            content.innerHTML = `
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">¡Terminamos! 💕</h3>
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">Acertaste ${quizScore} de ${quizQuestions.length} preguntas</p>
-                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
-                    ${quizScore === quizQuestions.length 
-                        ? '¡Perfecto! Nos conocemos tanto que parece magia ✨' 
-                        : 'No importa el puntaje, lo importante es que estamos juntos aprendiendo uno del otro ❤️'}
-                </p>
-                <button class="btn-romantic" onclick="closeGame('quiz-modal')">Cerrar</button>
-            `;
-        }
+      const notes = JSON.parse(localStorage.getItem('milena_universe_notes') || '[]');
+      notes.unshift({ text: text, date: new Date().toLocaleDateString('es-ES') });
+      localStorage.setItem('milena_universe_notes', JSON.stringify(notes));
 
-        // Truth or Dare
-        function startTruthOrDare() {
-            document.getElementById('tod-modal').classList.add('active');
-            document.getElementById('tod-display').textContent = 'Presiona un botón para comenzar';
-        }
+      input.value = '';
+      document.getElementById('note-status').innerText = '¡Nota guardada en las estrellas! ❤';
+      setTimeout(() => document.getElementById('note-status').innerText = '', 3000);
+      renderNotes();
+    }
 
-        function getTruth() {
-            const truths = truthOrDare.verdades;
-            const random = truths[Math.floor(Math.random() * truths.length)];
-            document.getElementById('tod-display').innerHTML = `<div><strong>Verdad:</strong><br><br>${random}</div>`;
-        }
+    function renderNotes() {
+      const notes = JSON.parse(localStorage.getItem('milena_universe_notes') || '[]');
+      const container = document.getElementById('notes-list');
+      
+      if (notes.length === 0) {
+        container.innerHTML = '<p class="text-xs text-rose-400/60 italic text-center py-2">No hay notas guardadas aún.</p>';
+        return;
+      }
 
-        function getDare() {
-            const dares = truthOrDare.retos;
-            const random = dares[Math.floor(Math.random() * dares.length)];
-            document.getElementById('tod-display').innerHTML = `<div><strong>Reto:</strong><br><br>${random}</div>`;
-        }
+      container.innerHTML = notes.map((n, i) => `
+        <div class="p-3 rounded-xl bg-purple-950/40 border border-purple-900/30 flex justify-between items-start gap-2">
+          <div>
+            <p class="text-xs text-rose-100 leading-relaxed">${n.text}</p>
+            <span class="text-[9px] text-rose-400/60">${n.date}</span>
+          </div>
+          <button onclick="deleteNote(${i})" class="text-rose-400/60 hover:text-rose-300 text-xs px-1">✕</button>
+        </div>
+      `).join('');
+    }
 
-        // Cards Game
-        function startCardsGame() {
-            document.getElementById('cards-modal').classList.add('active');
-            document.getElementById('card-message').style.display = 'none';
-            
-            const grid = document.getElementById('cards-grid');
-            grid.innerHTML = Array(12).fill(0).map((_, i) => `
-                <div class="game-card-item" onclick="flipCard(this, ${i})">❤️</div>
-            `).join('');
-        }
+    function deleteNote(index) {
+      const notes = JSON.parse(localStorage.getItem('milena_universe_notes') || '[]');
+      notes.splice(index, 1);
+      localStorage.setItem('milena_universe_notes', JSON.stringify(notes));
+      renderNotes();
+    }
 
-        function flipCard(element, index) {
-            if (element.classList.contains('flipped')) return;
-            
-            element.classList.add('flipped');
-            element.textContent = '💌';
-            
-            const message = cardMessages[Math.floor(Math.random() * cardMessages.length)];
-            const messageDiv = document.getElementById('card-message');
-            messageDiv.textContent = message;
-            messageDiv.style.display = 'block';
-        }
+    // ==================== 8. NAVEGACIÓN Y DESPLAZAMIENTO ====================
+    function scrollToSec(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
-        // Catch Hearts Game
-        function startCatchHearts() {
-            document.getElementById('catch-modal').classList.add('active');
-            catchScore = 0;
-            document.getElementById('catch-score').textContent = '0';
-            document.getElementById('catch-area').innerHTML = '';
-        }
-
-        function startCatchGame() {
-            catchScore = 0;
-            document.getElementById('catch-score').textContent = '0';
-            
-            if (catchInterval) clearInterval(catchInterval);
-            
-            catchInterval = setInterval(() => {
-                spawnHeart();
-            }, 800);
-
-            setTimeout(() => {
-                clearInterval(catchInterval);
-                endCatchGame();
-            }, 15000);
-        }
-
-        function spawnHeart() {
-            const area = document.getElementById('catch-area');
-            const heart = document.createElement('div');
-            heart.className = 'catch-heart';
-            heart.textContent = '❤️';
-            heart.style.left = Math.random() * 90 + '%';
-            heart.style.top = '-50px';
-            
-            heart.onclick = () => {
-                catchScore++;
-                document.getElementById('catch-score').textContent = catchScore;
-                heart.remove();
-            };
-
-            area.appendChild(heart);
-
-            let pos = -50;
-            const fall = setInterval(() => {
-                pos += 3;
-                heart.style.top = pos + 'px';
-                
-                if (pos > 400) {
-                    clearInterval(fall);
-                    heart.remove();
-                }
-            }, 30);
-        }
-
-        function endCatchGame() {
-            const area = document.getElementById('catch-area');
-            area.innerHTML = `
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px;">¡Termin
+    window.addEventListener('DOMContentLoaded', () => {
+      loadQuiz();
+      renderNotes();
+    });
+  </script>
+</body>
+</html>
